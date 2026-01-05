@@ -46,6 +46,7 @@
             background: #475569; 
         }
         
+        /* Animations */
         .fade-in {
             animation: fadeIn 0.8s ease-out forwards;
             opacity: 0;
@@ -59,11 +60,26 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Glassmorphism utilities */
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* SCROLLING ANIMATION LOGIC
+           For 30 logos, the strip is very long. We need a slower duration (120s)
+           to keep the speed readable.
+        */
+        @keyframes scroll-loop {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .animate-scroll-track {
+            display: flex;
+            align-items: center;
+            width: max-content; /* Ensure container fits all 60 items (30*2) */
+            /* 120s duration ensures smooth speed for 30 items */
+            animation: scroll-loop 120s linear infinite; 
+            will-change: transform; /* GPU Optimization */
+        }
+
+        .animate-scroll-track:hover {
+            animation-play-state: paused;
         }
     </style>
 </head>
@@ -331,14 +347,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-8 pt-6 border-t border-slate-700/50">
-                            <p class="italic text-slate-400 text-sm">
-                                "We use our expertise in instrumentation to recommend key modifications that ensure compliance."
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="py-12 bg-slate-100 border-t border-slate-200 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 mb-8">
+            <h3 class="text-center text-slate-400 font-bold uppercase tracking-widest text-sm">Trusted By Industry Leaders</h3>
+        </div>
+        
+        <div class="w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <div id="marquee-content" class="animate-scroll-track">
+                </div>
         </div>
     </div>
 
@@ -478,11 +500,55 @@
     </button>
 
     <script>
+        // ==========================================
+        // CONFIGURATION SECTION (EDIT THIS)
+        // ==========================================
+        
+        // 1. Create a folder named 'logos' next to this file
+        // 2. Add your 30+ images there
+        // 3. I have pre-filled this list for you. 
+        //    Rename your files to match these, OR update the names below.
+        const partnerLogos = [
+            'logo1.png', 'logo2.png', 'logo3.png', 'logo4.png', 'logo5.png',
+            'logo6.png', 'logo7.png', 'logo8.png', 'logo9.png', 'logo10.png',
+            'logo11.png', 'logo12.png', 'logo13.png', 'logo14.png', 'logo15.png',
+            'logo16.png', 'logo17.png', 'logo18.png', 'logo19.png', 'logo20.png',
+            'logo21.png', 'logo22.png', 'logo23.png', 'logo24.png', 'logo25.png',
+            'logo26.png', 'logo27.png', 'logo28.png', 'logo29.png', 'logo30.png'
+        ];
+        
+        // ==========================================
+        // END CONFIGURATION
+        // ==========================================
+
+        // Render Partner Logos
+        function renderLogos() {
+            const container = document.getElementById('marquee-content');
+            
+            // We create a list of list-items
+            // ERROR HANDLING: If image fails, show a placeholder box so scrolling is still visible
+            const listItems = partnerLogos.map(logo => `
+                <div class="mx-8 flex-shrink-0 flex items-center justify-center">
+                    <img src="logos/${logo}" 
+                         alt="${logo}" 
+                         class="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    
+                    <div class="hidden h-12 px-4 items-center justify-center border border-dashed border-slate-300 rounded bg-slate-50 text-xs text-slate-400 font-mono whitespace-nowrap">
+                        ${logo}
+                    </div>
+                </div>
+            `).join('');
+
+            // We duplicate the list twice to create the infinite scroll effect
+            // We inject two sets of items into the flex container
+            container.innerHTML = listItems + listItems;
+        }
+
         // Update Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Data Structure with Images and Fallbacks
-        // Using high quality Unsplash images as fallbacks for the Drive links
         const CALIBRATION_SERVICES = [
             { id: 'pressure', title: 'Pressure & Vacuum', icon: 'gauge', image: "https://drive.google.com/uc?export=view&id=1zDWaESRZtJgrKYJF_chrZGqUt0VDyqfH", fallback: "https://images.unsplash.com/photo-1581093583449-ed25213444e9?auto=format&fit=crop&q=80&w=800", desc: 'High precision calibration for gauges and transmitters.', items: ['Pressure Gauges / Indicators', 'Vacuum Gauges / Indicators', 'Pressure Switches / Transmitters', 'Differential Pressure Gauges', 'Dead Weight Testers'] },
             { id: 'thermal', title: 'Thermal', icon: 'thermometer', image: "https://drive.google.com/uc?export=view&id=1GLpWBIWgWrgL31IRnG__Ke8p7O1JGrWr", fallback: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800", desc: 'Comprehensive temperature and humidity solutions.', items: ['Sensors (RTD, PT-100, Thermocouples)', 'Temperature Indicators / Controllers', 'Ovens, Baths, Furnaces', 'Environmental Chambers', 'IR Thermometers'] },
@@ -622,8 +688,6 @@
                     </button>
                 </div>`;
             }).join('');
-
-            lucide.createIcons();
         }
 
         // Toggle Card Logic
@@ -653,7 +717,7 @@
             const btn = e.target.querySelector('button');
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mr-2"></i> Sending...';
-            lucide.createIcons();
+            lucide.createIcons(); // Re-render icon
             btn.disabled = true;
             btn.classList.add('opacity-75', 'cursor-not-allowed');
 
@@ -691,8 +755,14 @@
         }
 
         // Initial Render
+        // Order matters: render HTML first, then create icons
         renderServices();
-        lucide.createIcons();
+        renderLogos();
+        
+        // Final pass to ensure all icons are rendered
+        setTimeout(() => {
+            lucide.createIcons();
+        }, 100);
 
     </script>
 </body>
