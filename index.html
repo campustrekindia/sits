@@ -61,8 +61,7 @@
         }
 
         /* SCROLLING ANIMATION LOGIC
-           For 30 logos, the strip is very long. We need a slower duration (120s)
-           to keep the speed readable.
+           120s duration ensures smooth speed for 30+ items 
         */
         @keyframes scroll-loop {
             0% { transform: translateX(0); }
@@ -72,8 +71,7 @@
         .animate-scroll-track {
             display: flex;
             align-items: center;
-            width: max-content; /* Ensure container fits all 60 items (30*2) */
-            /* 120s duration ensures smooth speed for 30 items */
+            width: max-content; 
             animation: scroll-loop 120s linear infinite; 
             will-change: transform; /* GPU Optimization */
         }
