@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SITS - Precision Calibration & Validation Services</title>
+    <title>SITS - Calibration & Validation Services</title>
     <meta name="description" content="NABL Accredited Calibration and Validation Services in Hyderabad. Precision you can trust.">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,10 +46,8 @@
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
         
-        /* FIXED ANIMATION: 
-           Removed default 'opacity: 0' to prevent the Hero section from 
-           being invisible if the animation fails to trigger. 
-        */
+        /* Animation Classes */
+        /* Removed default opacity:0 to ensure content is always visible if JS/CSS lags */
         .fade-in { 
             animation: fadeIn 0.8s ease-out forwards; 
         }
@@ -73,9 +71,9 @@
         .animate-scroll-track:hover { animation-play-state: paused; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 selection:bg-teal-500 selection:text-white font-sans">
+<body class="bg-white text-slate-900 selection:bg-teal-500 selection:text-white font-sans">
 
-    <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md text-white shadow-xl border-b border-teal-500/30 transition-all duration-300">
+    <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md text-white shadow-xl border-b border-teal-500/30 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="#home" class="flex items-center gap-3 group">
@@ -117,10 +115,10 @@
     </nav>
 
     <div id="home" class="relative bg-slate-900 overflow-hidden min-h-[90vh] flex items-center">
-        <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
             <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[100px]"></div>
             <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[100px]"></div>
-            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+            <div class="absolute top-[20%] left-[20%] w-[300px] h-[300px] bg-purple-500/5 rounded-full blur-[80px]"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
@@ -131,10 +129,9 @@
                         <span class="text-xs md:text-sm font-semibold tracking-wide uppercase">NABL Accredited • ISO/IEC 17025:2017</span>
                     </div>
                     <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                        Precision You Can <br/>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Trust</span>
+                        Precision You Can <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Trust</span>
                     </h1>
-                    <p class="mt-4 text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
+                    <p class="mt-4 text-xl text-slate-300 leading-relaxed max-w-2xl">
                         Complete Calibration & Validation solutions. From high-performance data loggers to complex HVAC validation, SITS ensures your equipment meets global compliance standards.
                     </p>
                     <div class="mt-8 flex flex-col sm:flex-row gap-4">
@@ -150,42 +147,42 @@
                 <div class="hidden lg:block relative fade-in fade-in-delay-1">
                     <div class="grid grid-cols-2 gap-4">
                         <div class="space-y-4 translate-y-8">
-                            <div class="bg-slate-800 p-1 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-48 relative group">
+                            <div class="bg-slate-800 p-2 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-48 relative group">
                                 <img src="https://drive.google.com/uc?export=view&id=1zDWaESRZtJgrKYJF_chrZGqUt0VDyqfH" 
                                      alt="Pressure Gauge" 
-                                     class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
+                                     class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
                                      onerror="this.src='https://images.unsplash.com/photo-1581093583449-ed25213444e9?q=80&w=600&auto=format&fit=crop'">
-                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-slate-900/90 to-transparent">
-                                    <span class="text-xs font-bold text-white px-2">Pressure Calibration</span>
+                                <div class="hidden w-full h-full items-center justify-center bg-slate-700 text-slate-500 rounded-xl">
+                                    <i data-lucide="gauge" class="w-12 h-12"></i>
                                 </div>
                             </div>
-                            <div class="bg-slate-800 p-1 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-48 relative group">
+                            <div class="bg-slate-800 p-2 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-48 relative group">
                                 <img src="https://drive.google.com/uc?export=view&id=1L_C7PqoqUEclf1W3nmX60WJNE5n1eniP" 
                                      alt="Data Logger" 
-                                     class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
+                                     class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
                                      onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop'">
-                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-slate-900/90 to-transparent">
-                                    <span class="text-xs font-bold text-white px-2">Data Logging</span>
+                                <div class="hidden w-full h-full items-center justify-center bg-slate-700 text-slate-500 rounded-xl">
+                                    <i data-lucide="wifi" class="w-12 h-12"></i>
                                 </div>
                             </div>
                         </div>
                         <div class="space-y-4">
-                            <div class="bg-slate-800 p-1 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-48 relative group">
+                            <div class="bg-slate-800 p-2 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-48 relative group">
                                 <img src="https://drive.google.com/uc?export=view&id=1GLpWBIWgWrgL31IRnG__Ke8p7O1JGrWr" 
                                      alt="Thermal Imager" 
-                                     class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
+                                     class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
                                      onerror="this.src='https://images.unsplash.com/photo-1629896738918-6c84b11f62e3?q=80&w=600&auto=format&fit=crop'">
-                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-slate-900/90 to-transparent">
-                                    <span class="text-xs font-bold text-white px-2">Thermal Imaging</span>
+                                <div class="hidden w-full h-full items-center justify-center bg-slate-700 text-slate-500 rounded-xl">
+                                    <i data-lucide="thermometer" class="w-12 h-12"></i>
                                 </div>
                             </div>
-                             <div class="bg-slate-800 p-1 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-48 relative group">
+                             <div class="bg-slate-800 p-2 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-48 relative group">
                                 <img src="https://drive.google.com/uc?export=view&id=1HOMN8h4VN_EffdsfTZPJAPfdm2yWL8bR" 
                                      alt="Tachometer" 
-                                     class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
+                                     class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
                                      onerror="this.src='https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=600&auto=format&fit=crop'">
-                                <div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-slate-900/90 to-transparent">
-                                    <span class="text-xs font-bold text-white px-2">Speed & Vibration</span>
+                                <div class="hidden w-full h-full items-center justify-center bg-slate-700 text-slate-500 rounded-xl">
+                                    <i data-lucide="activity" class="w-12 h-12"></i>
                                 </div>
                             </div>
                         </div>
@@ -194,92 +191,101 @@
             </div>
         </div>
         
-        <div class="absolute bottom-0 w-full border-t border-slate-800 bg-slate-900/80 backdrop-blur-md z-20">
-            <div class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-white">
-                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4">
-                    <div class="text-2xl md:text-3xl font-bold">500+</div>
-                    <div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Clients Served</div>
+        <div class="absolute bottom-0 w-full border-t border-slate-800 bg-slate-900/50 backdrop-blur-sm z-20">
+            <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-white">
+                <div class="text-center md:text-left border-l border-slate-800 pl-6 md:border-none md:pl-0">
+                    <div class="text-3xl font-bold">500+</div>
+                    <div class="text-sm text-slate-400 uppercase tracking-wider font-medium">Clients Served</div>
                 </div>
-                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4">
-                    <div class="text-2xl md:text-3xl font-bold">100+</div>
-                    <div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Parameters</div>
+                <div class="text-center md:text-left border-l border-slate-800 pl-6">
+                    <div class="text-3xl font-bold">100+</div>
+                    <div class="text-sm text-slate-400 uppercase tracking-wider font-medium">Parameters</div>
                 </div>
-                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4">
-                    <div class="text-2xl md:text-3xl font-bold">10+ Yrs</div>
-                    <div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Experience</div>
+                <div class="text-center md:text-left border-l border-slate-800 pl-6">
+                    <div class="text-3xl font-bold">10+ Yrs</div>
+                    <div class="text-sm text-slate-400 uppercase tracking-wider font-medium">Experience</div>
                 </div>
-                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4">
-                    <div class="text-2xl md:text-3xl font-bold">NABL</div>
-                    <div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Accreditation</div>
+                <div class="text-center md:text-left border-l border-slate-800 pl-6">
+                    <div class="text-3xl font-bold">NABL</div>
+                    <div class="text-sm text-slate-400 uppercase tracking-wider font-medium">Accreditation</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="services" class="py-24 bg-slate-50 relative">
+    <div id="services" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-teal-600 font-bold tracking-widest uppercase text-xs mb-2 block">What We Do</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Our Expertise</h2>
-                
-                <div class="flex justify-center mb-8">
-                    <div class="bg-white p-2 rounded-full shadow-lg border border-slate-200 inline-flex relative z-10">
-                        <button onclick="switchTab('calibration')" id="tab-calibration" class="px-6 md:px-8 py-3 rounded-full text-sm font-bold transition-all bg-slate-900 text-white shadow-md flex items-center gap-2">
-                            <i data-lucide="scale" class="w-4 h-4"></i> Instrument Calibration
-                        </button>
-                        <button onclick="switchTab('validation')" id="tab-validation" class="px-6 md:px-8 py-3 rounded-full text-sm font-bold transition-all text-slate-500 hover:text-slate-900 flex items-center gap-2">
-                            <i data-lucide="clipboard-check" class="w-4 h-4"></i> Process Validation
-                        </button>
-                    </div>
-                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Expertise</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    We provide comprehensive solutions across two major verticals. Explore our capabilities below.
+                </p>
+            </div>
 
-                <div class="max-w-lg mx-auto relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-teal-400 to-blue-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
-                    <div class="relative">
-                        <input type="text" id="service-search" placeholder="Search equipment (e.g. 'Oven', 'Vacuum')..." 
-                               class="w-full pl-12 pr-4 py-4 rounded-xl border-none bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-xl font-medium">
-                        <i data-lucide="search" class="absolute left-4 top-4 text-slate-400 w-5 h-5"></i>
-                    </div>
+            <div class="flex justify-center mb-12">
+                <div class="bg-white p-1.5 rounded-full shadow-md border border-slate-200 inline-flex">
+                    <button onclick="switchTab('calibration')" id="tab-calibration" class="px-8 py-3 rounded-full text-sm font-bold transition-all bg-blue-600 text-white shadow-md">
+                        Instrument Calibration
+                    </button>
+                    <button onclick="switchTab('validation')" id="tab-validation" class="px-8 py-3 rounded-full text-sm font-bold transition-all text-slate-500 hover:text-slate-900">
+                        Process Validation
+                    </button>
                 </div>
             </div>
 
-            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <div class="max-w-md mx-auto mb-12 relative">
+                <input type="text" id="service-search" placeholder="Search calibration equipment..." 
+                       class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm transition-all">
+                <i data-lucide="search" class="absolute left-3 top-3.5 text-slate-400 w-5 h-5"></i>
+            </div>
+
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
             
-            <div id="no-results" class="hidden text-center py-20 text-slate-500">
+            <div id="no-results" class="hidden text-center py-10 text-slate-500">
                 No services found matching your search.
             </div>
         </div>
     </div>
 
-    <div id="why-us" class="py-24 bg-white overflow-hidden relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div id="why-us" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
-                        Why Choose <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-600">SITS?</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                        Why Choose <span class="text-teal-600">SITS?</span>
                     </h2>
                     <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        We don't just calibrate equipment; we calibrate trust. Our protocols are designed to help you reduce costs while maintaining the highest compliance standards required by auditors.
+                        We don't just calibrate equipment; we calibrate trust. Our protocols are designed to help you reduce costs while maintaining the highest compliance standards.
                     </p>
                     
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                            <i data-lucide="award" class="w-6 h-6 text-teal-500 mt-1"></i>
-                            <div><h4 class="font-bold text-slate-900">Accredited & Compliant</h4><p class="text-sm text-slate-500">NABL Accredited Lab ISO/IEC 17025:2017</p></div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                            <i data-lucide="wifi" class="w-6 h-6 text-teal-500 mt-1"></i>
-                            <div><h4 class="font-bold text-slate-900">Modern Technology</h4><p class="text-sm text-slate-500">We utilize advanced Wireless High-Performance Data Loggers.</p></div>
-                        </div>
+                    <div class="space-y-4 text-slate-700 font-medium">
+                        <div class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mt-1"></i> NABL Accredited Lab ISO/IEC 17025:2017</div>
+                        <div class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mt-1"></i> Modern, Sophisticated, Reliable Setup</div>
+                        <div class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mt-1"></i> Traceability to National & International Standards</div>
+                        <div class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mt-1"></i> Highly Qualified Personnel</div>
+                        <div class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-teal-500 mt-1"></i> Quick and Professional Service</div>
                     </div>
                 </div>
                 
-                <div class="relative bg-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><i data-lucide="briefcase" class="text-teal-400"></i> Additional Services</h3>
-                    <div class="grid gap-6">
-                        <div class="flex items-center gap-4 border-b border-slate-800 pb-4"><div class="bg-teal-500/10 p-3 rounded-lg"><i data-lucide="file-text" class="w-6 h-6 text-teal-400"></i></div><div><h4 class="font-bold text-lg">Protocol Development</h4><p class="text-sm text-slate-400">IQ, OQ, PQ creation & execution.</p></div></div>
-                        <div class="flex items-center gap-4 border-b border-slate-800 pb-4"><div class="bg-teal-500/10 p-3 rounded-lg"><i data-lucide="search" class="w-6 h-6 text-teal-400"></i></div><div><h4 class="font-bold text-lg">Audit Support</h4><p class="text-sm text-slate-400">Continuous quality improvement.</p></div></div>
-                        <div class="flex items-center gap-4"><div class="bg-teal-500/10 p-3 rounded-lg"><i data-lucide="clock" class="w-6 h-6 text-teal-400"></i></div><div><h4 class="font-bold text-lg">Annual Contracts</h4><p class="text-sm text-slate-400">Regular calibration reminders.</p></div></div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-teal-400 rounded-3xl transform rotate-3 opacity-20"></div>
+                    <div class="relative bg-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
+                        <h3 class="text-2xl font-bold mb-6">We Also Offer</h3>
+                        <div class="grid gap-6">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-white/10 p-3 rounded-lg"><i data-lucide="file-text" class="w-6 h-6 text-teal-400"></i></div>
+                                <div><h4 class="font-bold">Protocol Development</h4><p class="text-sm text-slate-400">IQ, OQ, PQ creation & execution</p></div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="bg-white/10 p-3 rounded-lg"><i data-lucide="search" class="w-6 h-6 text-teal-400"></i></div>
+                                <div><h4 class="font-bold">Audit Support</h4><p class="text-sm text-slate-400">Continuous quality improvement</p></div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="bg-white/10 p-3 rounded-lg"><i data-lucide="clock" class="w-6 h-6 text-teal-400"></i></div>
+                                <div><h4 class="font-bold">Annual Contracts</h4><p class="text-sm text-slate-400">Regular calibration reminders</p></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -297,56 +303,57 @@
         </div>
     </div>
 
-    <div id="contact" class="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div id="contact" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-16">
                 <div>
-                    <h2 class="text-4xl font-extrabold mb-6">Get In Touch</h2>
-                    <p class="text-slate-400 mb-10 text-lg">Contact us for competitive rates on Calibration and Validation services.</p>
+                    <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+                    <p class="text-slate-400 mb-8">Contact us for competitive rates on Calibration and Validation services.</p>
                     <div class="space-y-6">
-                        <div class="flex items-start gap-5">
-                            <div class="bg-teal-500/10 p-4 rounded-xl border border-teal-500/20"><i data-lucide="phone" class="w-6 h-6 text-teal-400"></i></div>
-                            <div><h4 class="font-bold text-lg">Phone</h4><p class="text-slate-400">+91 97017 19993</p></div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-teal-500/20 p-3 rounded-lg"><i data-lucide="phone" class="w-6 h-6 text-teal-400"></i></div>
+                            <div><h4 class="font-bold">Phone</h4><p class="text-slate-300">+91 97017 19993</p></div>
                         </div>
-                        <div class="flex items-start gap-5">
-                            <div class="bg-teal-500/10 p-4 rounded-xl border border-teal-500/20"><i data-lucide="mail" class="w-6 h-6 text-teal-400"></i></div>
-                            <div><h4 class="font-bold text-lg">Email</h4><p class="text-slate-400">md.sitsbharat@gmail.com</p></div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-teal-500/20 p-3 rounded-lg"><i data-lucide="mail" class="w-6 h-6 text-teal-400"></i></div>
+                            <div><h4 class="font-bold">Email</h4><p class="text-slate-300">md.sitsbharat@gmail.com</p></div>
                         </div>
-                        <div class="flex items-start gap-5">
-                            <div class="bg-teal-500/10 p-4 rounded-xl border border-teal-500/20"><i data-lucide="map-pin" class="w-6 h-6 text-teal-400"></i></div>
-                            <div><h4 class="font-bold text-lg">Location</h4><p class="text-slate-400">Hyderabad, Telangana, India</p></div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-teal-500/20 p-3 rounded-lg"><i data-lucide="map-pin" class="w-6 h-6 text-teal-400"></i></div>
+                            <div><h4 class="font-bold">Location</h4><p class="text-slate-300">Hyderabad, Telangana, India</p></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl p-8 md:p-10 text-slate-900 shadow-2xl">
-                    <form id="contact-form" class="space-y-6">
-                        <div class="flex items-center justify-between mb-2"><h3 class="text-2xl font-bold">Request a Quote</h3></div>
+                <div class="bg-white rounded-2xl p-8 text-slate-900 shadow-2xl">
+                    <form id="contact-form" class="space-y-4">
+                        <h3 class="text-xl font-bold mb-4">Request a Quote</h3>
                         <div class="grid grid-cols-2 gap-4">
-                            <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Name</label><input required type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-teal-500 outline-none" placeholder="John Doe"></div>
-                            <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Company</label><input type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-teal-500 outline-none" placeholder="Pharma Inc"></div>
+                            <div><label class="block text-sm font-medium text-slate-700 mb-1">Name</label><input required type="text" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 outline-none" placeholder="John Doe"></div>
+                            <div><label class="block text-sm font-medium text-slate-700 mb-1">Company</label><input type="text" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 outline-none" placeholder="Pharma Inc"></div>
                         </div>
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Email</label><input required type="email" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-teal-500 outline-none" placeholder="john@example.com"></div>
+                        <div><label class="block text-sm font-medium text-slate-700 mb-1">Email</label><input required type="email" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 outline-none" placeholder="john@example.com"></div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Service Interest</label>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Service Interest</label>
                             <div class="relative">
-                                <select class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-teal-500 outline-none appearance-none cursor-pointer">
+                                <select class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 outline-none appearance-none cursor-pointer">
                                     <option>Instrument Calibration</option>
                                     <option>Process Validation</option>
                                     <option>HVAC Validation</option>
                                     <option>Steam Quality Test</option>
                                     <option>Other</option>
                                 </select>
-                                <i data-lucide="chevron-down" class="absolute right-4 top-3.5 w-5 h-5 text-slate-400 pointer-events-none"></i>
+                                <i data-lucide="chevron-down" class="absolute right-4 top-3.5 w-4 h-4 text-slate-400 pointer-events-none"></i>
                             </div>
                         </div>
-                        <div><label class="block text-xs font-bold text-slate-500 uppercase mb-1">Message</label><textarea rows="3" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-teal-500 outline-none" placeholder="Details..."></textarea></div>
-                        <button type="submit" class="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg transition-all shadow-lg">Send Request</button>
+                        <div><label class="block text-sm font-medium text-slate-700 mb-1">Message</label><textarea rows="3" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 outline-none" placeholder="Details..."></textarea></div>
+                        <button type="submit" class="w-full py-3 bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold rounded-lg transition-colors flex justify-center items-center">Send Request</button>
                     </form>
-                    <div id="form-success" class="hidden h-full flex-col items-center justify-center text-center py-10 fade-in">
-                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 animate-bounce"><i data-lucide="check" class="w-10 h-10 text-green-600"></i></div>
+                    
+                    <div id="form-success" class="hidden h-full flex-col items-center justify-center text-center py-10">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4"><i data-lucide="check-circle" class="w-8 h-8 text-green-600"></i></div>
                         <h3 class="text-2xl font-bold mb-2">Request Sent!</h3>
-                        <button onclick="resetForm()" class="text-teal-600 font-bold hover:underline flex items-center gap-2"><i data-lucide="refresh-cw" class="w-4 h-4"></i> Send another</button>
+                        <button onclick="resetForm()" class="mt-6 text-teal-600 font-semibold hover:underline">Send another request</button>
                     </div>
                 </div>
             </div>
@@ -354,17 +361,17 @@
     </div>
 
     <footer class="bg-slate-950 text-slate-500 py-12 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
-                <div class="flex items-center justify-center md:justify-start gap-2 mb-2"><div class="bg-teal-500 p-1 rounded shadow"><i data-lucide="shield-check" class="w-4 h-4 text-slate-900"></i></div><h2 class="text-xl font-bold text-white">SITS</h2></div>
+                <h2 class="text-2xl font-bold text-white mb-2">SITS</h2>
                 <p class="text-sm max-w-md">Sanjeevani Integrated Technological Solutions</p>
-                <p class="text-xs mt-2 text-teal-500/80 uppercase tracking-widest">NABL Accredited Lab ISO/IEC 17025:2017</p>
+                <p class="text-xs mt-2 text-teal-500/80">NABL Accredited Lab ISO/IEC 17025:2017</p>
             </div>
-            <div class="text-xs text-slate-600 text-center md:text-right">&copy; <span id="year"></span> SITS Bharat. All rights reserved.</div>
+            <div class="text-sm">&copy; <span id="year"></span> SITS Bharat. All rights reserved.</div>
         </div>
     </footer>
 
-    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" id="scroll-top-btn" class="fixed bottom-8 right-8 p-3 bg-teal-500 text-white rounded-full shadow-2xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 hover:scale-110"><i data-lucide="arrow-up" class="w-6 h-6"></i></button>
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" id="scroll-top-btn" class="fixed bottom-8 right-8 p-3 bg-teal-500 text-white rounded-full shadow-xl transition-all duration-300 z-50 hover:bg-teal-400 hover:scale-110 opacity-0 translate-y-10 pointer-events-none"><i data-lucide="arrow-up" class="w-6 h-6"></i></button>
 
     <script>
         // =========================================================================
@@ -403,18 +410,19 @@
         // Includes fallback images from Unsplash in case Drive links fail
         const SERVICES = {
             calibration: [
-                { id: 'pres', title: 'Pressure & Vacuum', icon: 'gauge', image: "https://drive.google.com/uc?export=view&id=1zDWaESRZtJgrKYJF_chrZGqUt0VDyqfH", fallback: "https://images.unsplash.com/photo-1581093583449-ed25213444e9?auto=format&fit=crop&q=80&w=800", desc: 'High precision calibration for gauges and transmitters.', items: ['Pressure Gauges / Indicators', 'Vacuum Gauges / Indicators', 'Pressure Switches / Transmitters', 'Differential Pressure Gauges', 'Dead Weight Testers'] },
-                { id: 'therm', title: 'Thermal', icon: 'thermometer', image: "https://drive.google.com/uc?export=view&id=1GLpWBIWgWrgL31IRnG__Ke8p7O1JGrWr", fallback: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800", desc: 'Comprehensive temperature and humidity solutions.', items: ['Sensors (RTD, PT-100)', 'Thermocouples', 'Ovens, Baths, Furnaces', 'IR Thermometers'] },
-                { id: 'mech', title: 'Mechanical & Speed', icon: 'activity', image: "https://drive.google.com/uc?export=view&id=1HOMN8h4VN_EffdsfTZPJAPfdm2yWL8bR", fallback: "https://images.unsplash.com/photo-1619813303356-4060ea6723b9?auto=format&fit=crop&q=80&w=800", desc: 'RPM, Sound, and Vibration measurement.', items: ['RPM Meters', 'Tachometers', 'Centrifuges', 'Sound Level Meters'] },
-                { id: 'mass', title: 'Mass & Volume', icon: 'scale', image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800", desc: 'Precision weighing and volumetric measures.', items: ['Weighing Balances', 'Standard Weights', 'Liquid Flow', 'Glassware'] },
-                { id: 'elec', title: 'Electro-Technical', icon: 'zap', image: "https://images.unsplash.com/photo-1580894732930-0babd100d356?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1580894732930-0babd100d356?auto=format&fit=crop&q=80&w=800", desc: 'Calibration for electrical measuring instruments.', items: ['Multimeters (Digital / Analog)', 'Ammeters & Voltmeters', 'Calibrators', 'Decade Boxes'] },
-                { id: 'time', title: 'Time & Level', icon: 'clock', image: "https://images.unsplash.com/photo-1508614999368-9260051292e5?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1508614999368-9260051292e5?auto=format&fit=crop&q=80&w=800", desc: 'Timing devices and level indicators.', items: ['Stopwatches', 'Timers', 'Level Transmitters'] }
+                { id: 'pressure', title: 'Pressure & Vacuum', icon: 'gauge', image: "https://drive.google.com/uc?export=view&id=1zDWaESRZtJgrKYJF_chrZGqUt0VDyqfH", fallback: "https://images.unsplash.com/photo-1581093583449-ed25213444e9?auto=format&fit=crop&q=80&w=800", desc: 'High precision calibration for gauges and transmitters.', items: ['Pressure Gauges / Indicators', 'Vacuum Gauges / Indicators', 'Pressure Switches / Transmitters', 'Differential Pressure Gauges', 'Dead Weight Testers'] },
+                { id: 'thermal', title: 'Thermal', icon: 'thermometer', image: "https://drive.google.com/uc?export=view&id=1GLpWBIWgWrgL31IRnG__Ke8p7O1JGrWr", fallback: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800", desc: 'Comprehensive temperature and humidity solutions.', items: ['Sensors (RTD, PT-100, Thermocouples)', 'Temperature Indicators / Controllers', 'Ovens, Baths, Furnaces', 'Environmental Chambers', 'IR Thermometers'] },
+                { id: 'mechanical', title: 'Mechanical & Speed', icon: 'activity', image: "https://drive.google.com/uc?export=view&id=1HOMN8h4VN_EffdsfTZPJAPfdm2yWL8bR", fallback: "https://images.unsplash.com/photo-1619813303356-4060ea6723b9?auto=format&fit=crop&q=80&w=800", desc: 'RPM, Sound, and Vibration measurement.', items: ['RPM Meters', 'Tachometers', 'Centrifuge Machines', 'Sound Level Measurement'] },
+                { id: 'mass', title: 'Mass & Volume', icon: 'scale', image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800", desc: 'Precision weighing and volumetric measures.', items: ['Weighing Balances', 'Standard Weights', 'Liquid Flow Meters', 'Water Meters & Rotameters'] },
+                { id: 'electro', title: 'Electro-Technical', icon: 'zap', image: "https://images.unsplash.com/photo-1580894732930-0babd100d356?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1580894732930-0babd100d356?auto=format&fit=crop&q=80&w=800", desc: 'Calibration for electrical measuring instruments.', items: ['Multimeters (Digital / Analog)', 'Voltmeters & Ammeters', 'Multifunction Calibrators', 'Decade Boxes'] },
+                { id: 'time', title: 'Time & Level', icon: 'clock', image: "https://images.unsplash.com/photo-1508614999368-9260051292e5?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1508614999368-9260051292e5?auto=format&fit=crop&q=80&w=800", desc: 'Timing devices and level indicators.', items: ['Stopwatches', 'Timers / Counters', 'Level Transmitters', 'Level Indicators'] },
+                { id: 'analytical', title: 'Analytical', icon: 'beaker', image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=800", desc: 'Lab and process analytical equipment.', items: ['pH Meters', 'Conductivity Meters', 'ORP Sensors', 'Gas Analyzers'] }
             ],
             validation: [
-                { id: 'hvac', title: 'HVAC & Clean Room', icon: 'wind', image: "https://drive.google.com/uc?export=view&id=1kBv0gRIZaVKdeHYQoFcdlQmbmcjP1ie2", fallback: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=800", desc: 'Complete clean room validation cycles.', items: ['Air Flow & ACPH', 'Filter Integrity', 'Particle Count', 'Recovery Test', 'Pressure Balancing'] },
-                { id: 'tval', title: 'Thermal Validation', icon: 'thermometer', image: "https://drive.google.com/uc?export=view&id=1RMXBxdaiW_YAVTKSfqRNL6JM2aDj_Iim", fallback: "https://images.unsplash.com/photo-1584328896786-9874760fa9e0?auto=format&fit=crop&q=80&w=800", desc: 'Qualification of thermal processing equipment.', items: ['Autoclaves', 'Depyrogenation Tunnels', 'Cold Rooms', 'Deep Freezers', 'Lyophilizers'] },
-                { id: 'plc', title: 'PLC Systems', icon: 'cpu', image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800", desc: 'Validation of automated control systems.', items: ['PLC Validation', 'SCADA Systems', 'BMS Validation', 'Environmental Controls'] },
-                { id: 'steam', title: 'Steam Quality', icon: 'cloud-fog', image: "https://drive.google.com/uc?export=view&id=1L_C7PqoqUEclf1W3nmX60WJNE5n1eniP", fallback: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=800", desc: 'Purity testing for critical utilities.', items: ['Non-condensable Gases', 'Super-heated Steam', 'Dryness Value', 'Dew Point & Oil Mist'] }
+                { id: 'hvac', title: 'HVAC & Clean Room', icon: 'wind', image: "https://drive.google.com/uc?export=view&id=1kBv0gRIZaVKdeHYQoFcdlQmbmcjP1ie2", fallback: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=800", desc: 'Complete clean room validation cycles.', items: ['Air Flow Test & ACPH Calculations', 'Filter Integrity / Leakage Test', 'Non-Viable Particle Count', 'Recovery Test', 'Air Pressure Balancing'] },
+                { id: 'thermal-val', title: 'Thermal Validation', icon: 'thermometer', image: "https://drive.google.com/uc?export=view&id=1RMXBxdaiW_YAVTKSfqRNL6JM2aDj_Iim", fallback: "https://images.unsplash.com/photo-1584328896786-9874760fa9e0?auto=format&fit=crop&q=80&w=800", desc: 'Qualification of thermal processing equipment.', items: ['Autoclave / Sterilizer Qualification', 'Depyrogenation Ovens', 'Cold Rooms Mapping', 'Deep Freezers', 'Lyophilizers'] },
+                { id: 'plc', title: 'PLC & Computer Systems', icon: 'cpu', image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800", desc: 'Validation of automated control systems.', items: ['PLC Validation', 'SCADA / DAS Systems', 'BMS Validation', 'Environment Control Systems'] },
+                { id: 'steam', title: 'Steam Quality', icon: 'cloud-fog', image: "https://drive.google.com/uc?export=view&id=1L_C7PqoqUEclf1W3nmX60WJNE5n1eniP", fallback: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=800", desc: 'Purity testing for critical utilities.', items: ['Non-condensable Gases Test', 'Super-heated Steam Test', 'Dryness Value Test', 'Dew Point & Oil Mist'] }
             ]
         };
 
@@ -424,8 +432,19 @@
         // --- Logic ---
         function switchTab(tab) {
             currentTab = tab;
-            document.getElementById('tab-calibration').className = tab === 'calibration' ? "px-6 md:px-8 py-3 rounded-full text-sm font-bold bg-slate-900 text-white shadow-md flex items-center gap-2" : "px-6 md:px-8 py-3 rounded-full text-sm font-bold text-slate-500 hover:text-slate-900 flex items-center gap-2";
-            document.getElementById('tab-validation').className = tab === 'validation' ? "px-6 md:px-8 py-3 rounded-full text-sm font-bold bg-teal-500 text-white shadow-md flex items-center gap-2" : "px-6 md:px-8 py-3 rounded-full text-sm font-bold text-slate-500 hover:text-slate-900 flex items-center gap-2";
+            const tabCal = document.getElementById('tab-calibration');
+            const tabVal = document.getElementById('tab-validation');
+            const searchInput = document.getElementById('service-search');
+
+            if(tab === 'calibration') {
+                tabCal.className = "px-8 py-3 rounded-full text-sm font-bold transition-all bg-blue-600 text-white shadow-md";
+                tabVal.className = "px-8 py-3 rounded-full text-sm font-bold transition-all text-slate-500 hover:text-slate-900";
+                searchInput.placeholder = "Search calibration equipment...";
+            } else {
+                tabVal.className = "px-8 py-3 rounded-full text-sm font-bold transition-all bg-teal-500 text-white shadow-md";
+                tabCal.className = "px-8 py-3 rounded-full text-sm font-bold transition-all text-slate-500 hover:text-slate-900";
+                searchInput.placeholder = "Search validation processes...";
+            }
             renderServices();
         }
 
@@ -436,55 +455,75 @@
 
         function renderServices() {
             const grid = document.getElementById('services-grid');
+            const noResults = document.getElementById('no-results');
             const data = SERVICES[currentTab].filter(s => s.title.toLowerCase().includes(searchTerm) || s.items.some(i => i.toLowerCase().includes(searchTerm)));
             
             if(data.length === 0) {
                 grid.innerHTML = '';
-                document.getElementById('no-results').classList.remove('hidden');
+                noResults.classList.remove('hidden');
                 return;
             }
-            document.getElementById('no-results').classList.add('hidden');
+            noResults.classList.add('hidden');
 
-            const theme = currentTab === 'calibration' ? 'blue' : 'teal';
-            const accent = theme === 'teal' ? 'bg-teal-500 text-teal-600' : 'bg-blue-600 text-blue-600';
+            const themeColor = currentTab === 'calibration' ? 'blue' : 'teal';
 
-            grid.innerHTML = data.map(s => `
-                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col h-full fade-in">
-                    <div class="h-1.5 w-full ${theme === 'teal' ? 'bg-teal-500' : 'bg-blue-600'}"></div>
+            grid.innerHTML = data.map(s => {
+                const accentColor = themeColor === 'teal' ? 'bg-teal-500' : 'bg-blue-600';
+                const textColor = themeColor === 'teal' ? 'text-teal-600' : 'text-blue-600';
+                const dotColor = themeColor === 'teal' ? 'bg-teal-400' : 'bg-blue-400';
+
+                const itemsHtml = s.items.map(item => `
+                    <li class="flex items-start text-sm text-slate-700">
+                        <div class="mt-1.5 mr-2 w-1.5 h-1.5 rounded-full ${dotColor}"></div>
+                        ${item}
+                    </li>
+                `).join('');
+
+                return `
+                <div class="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col h-full fade-in">
+                    <div class="h-1.5 w-full ${accentColor}"></div>
                     <div class="h-48 overflow-hidden relative">
                         <img src="${s.image}" 
                              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                              onerror="this.onerror=null; this.src='${s.fallback}'">
-                        <div class="absolute bottom-4 left-4"><div class="p-2 rounded-lg bg-white/90 shadow-lg text-slate-800"><i data-lucide="${s.icon}"></i></div></div>
+                        <div class="absolute bottom-4 left-4 z-20">
+                            <div class="p-2 rounded-lg inline-flex backdrop-blur-md bg-white/20 text-white border border-white/30">
+                                <i data-lucide="${s.icon}"></i>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-6 flex-1">
                         <h3 class="text-xl font-bold text-slate-900 mb-2">${s.title}</h3>
-                        <p class="text-slate-500 text-sm mb-4">${s.desc}</p>
-                        <ul class="space-y-1 text-sm text-slate-600">
-                            ${s.items.map(i => `<li class="flex items-center gap-2"><div class="w-1 h-1 rounded-full bg-slate-400"></div>${i}</li>`).join('')}
-                        </ul>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-2">${s.desc}</p>
+                        <div id="list-${s.id}" class="space-y-2 overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+                            <ul class="space-y-1">${itemsHtml}</ul>
+                        </div>
                     </div>
-                    <button onclick="toggleCard('${s.id}')" class="w-full py-4 px-6 text-sm font-bold flex items-center justify-between border-t border-slate-50 bg-slate-50 hover:bg-white transition-colors ${accent}">
-                        <span id="btn-text-${s.id}">View Details</span>
-                        <i id="btn-icon-${s.id}" data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                    <button onclick="toggleCard('${s.id}')" class="w-full py-3 px-6 text-sm font-semibold flex items-center justify-between border-t border-slate-100 hover:bg-slate-50 transition-colors ${textColor}">
+                        <span id="btn-text-${s.id}">View Instruments</span>
+                        <i id="btn-icon-${s.id}" data-lucide="chevron-right" class="w-4 h-4 transition-transform duration-300"></i>
                     </button>
-                </div>
-            `).join('');
+                </div>`;
+            }).join('');
             lucide.createIcons();
         }
 
-        // Toggle Card Logic (Simple version for clean UI)
+        // Toggle Card Logic
         window.toggleCard = (id) => {
-            const btnIcon = document.getElementById(`btn-icon-${id}`);
+            const list = document.getElementById(`list-${id}`);
             const btnText = document.getElementById(`btn-text-${id}`);
-            // In this version, the button is mostly decorative/lead-gen, but let's make it interact
-            if(btnText.innerText === "View Details") {
-                btnText.innerText = "Contact for Quote";
-                btnIcon.style.transform = "rotate(180deg)";
-                document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
-            } else {
-                btnText.innerText = "View Details";
+            const btnIcon = document.getElementById(`btn-icon-${id}`);
+            
+            if(list.style.maxHeight) {
+                list.style.maxHeight = null;
+                list.style.opacity = '0';
+                btnText.textContent = "View Instruments";
                 btnIcon.style.transform = "rotate(0deg)";
+            } else {
+                list.style.maxHeight = list.scrollHeight + "px";
+                list.style.opacity = '1';
+                btnText.textContent = "Show Less";
+                btnIcon.style.transform = "rotate(90deg)";
             }
         }
 
@@ -500,9 +539,11 @@
         // Scroll Button
         const scrollBtn = document.getElementById('scroll-top-btn');
         window.addEventListener('scroll', () => {
-            scrollBtn.classList.toggle('opacity-0', window.scrollY < 400);
-            scrollBtn.classList.toggle('translate-y-10', window.scrollY < 400);
-            scrollBtn.classList.toggle('pointer-events-none', window.scrollY < 400);
+            if(window.scrollY > 400) {
+                scrollBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
         });
 
         // Contact Form
