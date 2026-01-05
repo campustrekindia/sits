@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SITS - Calibration & Validation Services</title>
+    <title>SITS - Precision Calibration & Validation Services</title>
     <meta name="description" content="NABL Accredited Calibration and Validation Services in Hyderabad. Precision you can trust.">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,20 +24,6 @@
                             850: '#151e2e',
                             950: '#020617',
                         }
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 1s ease-out forwards',
-                        'float': 'float 6s ease-in-out infinite'
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        }
                     }
                 }
             }
@@ -45,34 +31,45 @@
     </script>
     
     <style>
-        /* Custom Scrollbar */
+        /* Modern Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
         
-        /* Ensure content is visible even if animation fails */
-        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        /* Reliable Fade In Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         
-        /* Animation Delays */
+        .fade-in {
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 0.8s ease-out forwards; /* Animate to visible */
+        }
+        
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
 
-        /* Infinite Scroll Animation */
+        /* Infinite Scroll Animation for Logos */
         @keyframes scroll-loop {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
+        
         .animate-scroll-track {
             display: flex;
             align-items: center;
             width: max-content;
-            /* 100s duration = smooth speed for 30 logos */
-            animation: scroll-loop 100s linear infinite; 
+            /* 120s duration ensures the 30 logos scroll smoothly and are readable */
+            animation: scroll-loop 120s linear infinite; 
             will-change: transform;
         }
-        .animate-scroll-track:hover { animation-play-state: paused; }
+        
+        .animate-scroll-track:hover { 
+            animation-play-state: paused; 
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 selection:bg-teal-500 selection:text-white font-sans antialiased">
@@ -120,7 +117,6 @@
         <div class="absolute inset-0 z-0 pointer-events-none">
             <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[100px] animate-pulse"></div>
             <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[100px]"></div>
-            <div class="absolute top-[20%] left-[20%] w-[300px] h-[300px] bg-purple-500/5 rounded-full blur-[80px]"></div>
             <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         </div>
 
@@ -134,7 +130,7 @@
                     </div>
                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
                         Precision You Can <br/>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Trust.</span>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Truly Trust</span>
                     </h1>
                     <p class="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl font-light">
                         Complete Calibration & Validation solutions for modern industry. From high-performance data loggers to complex HVAC validation, SITS ensures your equipment meets global compliance standards.
@@ -153,25 +149,21 @@
                     <div class="grid grid-cols-2 gap-4 transform rotate-2 hover:rotate-0 transition-transform duration-700">
                         <div class="space-y-4 translate-y-8">
                             <div class="bg-slate-800 p-1.5 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-56 relative group">
-                                <img src="https://drive.google.com/uc?export=view&id=1zDWaESRZtJgrKYJF_chrZGqUt0VDyqfH" alt="Pressure" class="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-700" 
-                                     onerror="this.src='https://images.unsplash.com/photo-1581093583449-ed25213444e9?q=80&w=600&auto=format&fit=crop'">
+                                <img src="https://images.unsplash.com/photo-1581093583449-ed25213444e9?q=80&w=600&auto=format&fit=crop" alt="Pressure" class="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-4"><span class="text-xs font-bold text-white uppercase tracking-wider">Calibration</span></div>
                             </div>
                             <div class="bg-slate-800 p-1.5 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-40 relative group">
-                                <img src="https://drive.google.com/uc?export=view&id=1L_C7PqoqUEclf1W3nmX60WJNE5n1eniP" alt="Data Logger" class="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-700"
-                                     onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop'">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Data Logger" class="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-4"><span class="text-xs font-bold text-white uppercase tracking-wider">Logging</span></div>
                             </div>
                         </div>
                         <div class="space-y-4">
                             <div class="bg-slate-800 p-1.5 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-40 relative group">
-                                <img src="https://drive.google.com/uc?export=view&id=1GLpWBIWgWrgL31IRnG__Ke8p7O1JGrWr" alt="Thermal" class="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-700"
-                                     onerror="this.src='https://images.unsplash.com/photo-1629896738918-6c84b11f62e3?q=80&w=600&auto=format&fit=crop'">
+                                <img src="https://images.unsplash.com/photo-1629896738918-6c84b11f62e3?q=80&w=600&auto=format&fit=crop" alt="Thermal" class="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-4"><span class="text-xs font-bold text-white uppercase tracking-wider">Thermal</span></div>
                             </div>
                              <div class="bg-slate-800 p-1.5 rounded-2xl shadow-2xl border border-slate-700/50 overflow-hidden h-56 relative group">
-                                <img src="https://drive.google.com/uc?export=view&id=1HOMN8h4VN_EffdsfTZPJAPfdm2yWL8bR" alt="Tachometer" class="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-700"
-                                     onerror="this.src='https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=600&auto=format&fit=crop'">
+                                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=600&auto=format&fit=crop" alt="Lab" class="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-4"><span class="text-xs font-bold text-white uppercase tracking-wider">Analysis</span></div>
                             </div>
                         </div>
@@ -182,21 +174,22 @@
         
         <div class="absolute bottom-0 w-full border-t border-slate-800 bg-slate-900/80 backdrop-blur-md z-20">
             <div class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-white">
-                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4"><div class="text-2xl md:text-3xl font-bold">500+</div><div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Clients Served</div></div>
-                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4"><div class="text-2xl md:text-3xl font-bold">100+</div><div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Parameters</div></div>
-                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4"><div class="text-2xl md:text-3xl font-bold">10+ Yrs</div><div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Experience</div></div>
-                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4"><div class="text-2xl md:text-3xl font-bold">NABL</div><div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Accreditation</div></div>
+                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4"><div class="text-3xl font-bold">500+</div><div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Clients Served</div></div>
+                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4"><div class="text-3xl font-bold">100+</div><div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Parameters</div></div>
+                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4"><div class="text-3xl font-bold">10+ Yrs</div><div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Experience</div></div>
+                <div class="text-center md:text-left border-l-2 border-teal-500 pl-4"><div class="text-3xl font-bold">NABL</div><div class="text-[10px] md:text-xs text-slate-400 uppercase tracking-wider font-medium">Accreditation</div></div>
             </div>
         </div>
     </div>
 
     <div id="services" class="py-24 bg-slate-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
+            <div class="text-center mb-16 fade-in delay-100">
                 <span class="text-teal-600 font-bold tracking-widest uppercase text-xs mb-2 block">What We Do</span>
                 <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Our Expertise</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">We provide comprehensive solutions across two major verticals.</p>
                 
-                <div class="flex justify-center mb-10">
+                <div class="flex justify-center mb-10 mt-8">
                     <div class="bg-white p-2 rounded-full shadow-lg border border-slate-200 inline-flex relative z-10">
                         <button onclick="switchTab('calibration')" id="tab-calibration" class="px-6 md:px-8 py-3 rounded-full text-sm font-bold transition-all bg-slate-900 text-white shadow-md flex items-center gap-2 transform scale-105">
                             <i data-lucide="scale" class="w-4 h-4"></i> Instrument Calibration
@@ -266,8 +259,7 @@
                         <div class="flex items-center gap-3 mb-3 text-teal-400 font-bold"><i data-lucide="wifi"></i> Featured Technology</div>
                         <p class="text-slate-300 text-sm mb-4">We utilize advanced <strong>Wireless High-Performance Data Loggers</strong> for precise remote monitoring.</p>
                         <div class="h-32 bg-slate-800 rounded-lg overflow-hidden relative">
-                             <img src="https://drive.google.com/uc?export=view&id=1L_C7PqoqUEclf1W3nmX60WJNE5n1eniP" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" 
-                                  onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop'">
+                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
                         </div>
                     </div>
                 </div>
@@ -375,6 +367,11 @@
                 <p class="text-sm max-w-md">Sanjeevani Integrated Technological Solutions</p>
                 <p class="text-xs mt-2 text-teal-500/80 uppercase tracking-widest">NABL Accredited Lab ISO/IEC 17025:2017</p>
             </div>
+            <div class="flex gap-8 text-sm font-medium">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
             <div class="text-xs text-slate-600 text-center md:text-right">&copy; <span id="year"></span> SITS Bharat. All rights reserved.</div>
         </div>
     </footer>
@@ -382,7 +379,7 @@
     <button onclick="window.scrollTo({top:0, behavior:'smooth'})" id="scroll-top-btn" class="fixed bottom-8 right-8 p-3 bg-teal-500 text-white rounded-full shadow-2xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 hover:scale-110"><i data-lucide="arrow-up" class="w-6 h-6"></i></button>
 
     <script>
-        // CONFIGURATION: Ensure 'logo1.png' through 'logo30.png' are in the SAME folder.
+        // 1. Logo Configuration
         const partnerLogos = [
             'logo1.png', 'logo2.png', 'logo3.png', 'logo4.png', 'logo5.png',
             'logo6.png', 'logo7.png', 'logo8.png', 'logo9.png', 'logo10.png',
@@ -392,46 +389,44 @@
             'logo26.png', 'logo27.png', 'logo28.png', 'logo29.png', 'logo30.png'
         ];
 
-        // RENDER LOGOS (with error handling for broken images)
+        // 2. Render Logos Function
         function renderLogos() {
             const container = document.getElementById('marquee-content');
             const listItems = partnerLogos.map(logo => `
                 <div class="mx-8 flex-shrink-0 flex items-center justify-center">
                     <img src="${logo}" alt="${logo}" class="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
                          onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden')">
-                    
                     <div class="hidden h-12 px-4 flex items-center justify-center border border-dashed border-red-300 bg-red-50 text-xs text-red-500 font-mono whitespace-nowrap rounded">
-                        ${logo} Missing
+                        Missing: ${logo}
                     </div>
                 </div>
             `).join('');
-            // Duplicate list 2x for infinite scroll illusion
             container.innerHTML = listItems + listItems;
         }
 
-        // SERVICES DATA
+        // 3. Service Data (Complete 7 Calibration, 4 Validation)
         const SERVICES = {
             calibration: [
-                { id: 'pres', title: 'Pressure & Vacuum', icon: 'gauge', image: "https://drive.google.com/uc?export=view&id=1zDWaESRZtJgrKYJF_chrZGqUt0VDyqfH", fallback: "https://images.unsplash.com/photo-1581093583449-ed25213444e9?auto=format&fit=crop&q=80&w=800", desc: 'High precision calibration for gauges and transmitters.', items: ['Pressure Gauges / Indicators', 'Vacuum Gauges / Indicators', 'Pressure Switches / Transmitters', 'Differential Pressure Gauges', 'Dead Weight Testers'] },
-                { id: 'therm', title: 'Thermal', icon: 'thermometer', image: "https://drive.google.com/uc?export=view&id=1GLpWBIWgWrgL31IRnG__Ke8p7O1JGrWr", fallback: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800", desc: 'Comprehensive temperature and humidity solutions.', items: ['Sensors (RTD, PT-100)', 'Thermocouples', 'Ovens, Baths, Furnaces', 'Environmental Chambers', 'IR Thermometers'] },
-                { id: 'mech', title: 'Mechanical & Speed', icon: 'activity', image: "https://drive.google.com/uc?export=view&id=1HOMN8h4VN_EffdsfTZPJAPfdm2yWL8bR", fallback: "https://images.unsplash.com/photo-1619813303356-4060ea6723b9?auto=format&fit=crop&q=80&w=800", desc: 'RPM, Sound, and Vibration measurement.', items: ['RPM Meters', 'Tachometers', 'Centrifuges', 'Sound Level Meters'] },
-                { id: 'mass', title: 'Mass & Volume', icon: 'scale', image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800", desc: 'Precision weighing and volumetric measures.', items: ['Weighing Balances', 'Standard Weights', 'Liquid Flow Meters', 'Glassware'] },
-                { id: 'elec', title: 'Electro-Technical', icon: 'zap', image: "https://images.unsplash.com/photo-1580894732930-0babd100d356?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1580894732930-0babd100d356?auto=format&fit=crop&q=80&w=800", desc: 'Calibration for electrical measuring instruments.', items: ['Multimeters (Digital / Analog)', 'Voltmeters & Ammeters', 'Multifunction Calibrators', 'Decade Boxes'] },
-                { id: 'time', title: 'Time & Level', icon: 'clock', image: "https://images.unsplash.com/photo-1508614999368-9260051292e5?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1508614999368-9260051292e5?auto=format&fit=crop&q=80&w=800", desc: 'Timing devices and level indicators.', items: ['Stopwatches', 'Timers / Counters', 'Level Transmitters', 'Level Indicators'] },
-                { id: 'analytical', title: 'Analytical', icon: 'beaker', image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=800", desc: 'Lab and process analytical equipment.', items: ['pH Meters', 'Conductivity Meters', 'ORP Sensors', 'Gas Analyzers'] }
+                { id: 'pres', title: 'Pressure & Vacuum', icon: 'gauge', image: "https://images.unsplash.com/photo-1581093583449-ed25213444e9?auto=format&fit=crop&q=80&w=800", desc: 'High precision calibration for gauges and transmitters.', items: ['Pressure Gauges / Indicators', 'Vacuum Gauges / Indicators', 'Pressure Switches / Transmitters', 'Differential Pressure Gauges', 'Dead Weight Testers'] },
+                { id: 'therm', title: 'Thermal', icon: 'thermometer', image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800", desc: 'Comprehensive temperature and humidity solutions.', items: ['Sensors (RTD, PT-100, Thermocouples)', 'Temperature Indicators / Controllers', 'Ovens, Baths, Furnaces', 'Environmental Chambers', 'IR Thermometers'] },
+                { id: 'mech', title: 'Mechanical & Speed', icon: 'activity', image: "https://images.unsplash.com/photo-1619813303356-4060ea6723b9?auto=format&fit=crop&q=80&w=800", desc: 'RPM, Sound, and Vibration measurement.', items: ['RPM Meters', 'Tachometers', 'Centrifuge Machines', 'Sound Level Measurement'] },
+                { id: 'mass', title: 'Mass & Volume', icon: 'scale', image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800", desc: 'Precision weighing and volumetric measures.', items: ['Weighing Balances', 'Standard Weights', 'Liquid Flow Meters', 'Water Meters & Rotameters'] },
+                { id: 'elec', title: 'Electro-Technical', icon: 'zap', image: "https://images.unsplash.com/photo-1580894732930-0babd100d356?auto=format&fit=crop&q=80&w=800", desc: 'Calibration for electrical measuring instruments.', items: ['Multimeters (Digital / Analog)', 'Voltmeters & Ammeters', 'Multifunction Calibrators', 'Decade Boxes'] },
+                { id: 'time', title: 'Time & Level', icon: 'clock', image: "https://images.unsplash.com/photo-1508614999368-9260051292e5?auto=format&fit=crop&q=80&w=800", desc: 'Timing devices and level indicators.', items: ['Stopwatches', 'Timers / Counters', 'Level Transmitters', 'Level Indicators'] },
+                { id: 'analytical', title: 'Analytical', icon: 'beaker', image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=800", desc: 'Lab and process analytical equipment.', items: ['pH Meters', 'Conductivity Meters', 'ORP Sensors', 'Gas Analyzers'] }
             ],
             validation: [
-                { id: 'hvac', title: 'HVAC & Clean Room', icon: 'wind', image: "https://drive.google.com/uc?export=view&id=1kBv0gRIZaVKdeHYQoFcdlQmbmcjP1ie2", fallback: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=800", desc: 'Complete clean room validation cycles.', items: ['Air Flow Test & ACPH Calculations', 'Filter Integrity / Leakage Test', 'Non-Viable Particle Count', 'Recovery Test', 'Air Pressure Balancing'] },
-                { id: 'tval', title: 'Thermal Validation', icon: 'thermometer', image: "https://drive.google.com/uc?export=view&id=1RMXBxdaiW_YAVTKSfqRNL6JM2aDj_Iim", fallback: "https://images.unsplash.com/photo-1584328896786-9874760fa9e0?auto=format&fit=crop&q=80&w=800", desc: 'Qualification of thermal processing equipment.', items: ['Autoclaves', 'Depyrogenation Tunnels', 'Cold Rooms Mapping', 'Deep Freezers', 'Lyophilizers'] },
-                { id: 'plc', title: 'PLC & Computer Systems', icon: 'cpu', image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800", fallback: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800", desc: 'Validation of automated control systems.', items: ['PLC Validation', 'SCADA Systems', 'BMS Validation', 'Environment Control Systems'] },
-                { id: 'steam', title: 'Steam Quality', icon: 'cloud-fog', image: "https://drive.google.com/uc?export=view&id=1L_C7PqoqUEclf1W3nmX60WJNE5n1eniP", fallback: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=800", desc: 'Purity testing for critical utilities.', items: ['Non-condensable Gases', 'Super-heated Steam', 'Dryness Value', 'Dew Point & Oil Mist'] }
+                { id: 'hvac', title: 'HVAC & Clean Room', icon: 'wind', image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=800", desc: 'Complete clean room validation cycles.', items: ['Air Flow Test & ACPH Calculations', 'Filter Integrity / Leakage Test', 'Non-Viable Particle Count', 'Recovery Test', 'Air Pressure Balancing'] },
+                { id: 'tval', title: 'Thermal Validation', icon: 'thermometer', image: "https://images.unsplash.com/photo-1584328896786-9874760fa9e0?auto=format&fit=crop&q=80&w=800", desc: 'Qualification of thermal processing equipment.', items: ['Autoclave / Sterilizer Qualification', 'Depyrogenation Ovens', 'Cold Rooms Mapping', 'Deep Freezers', 'Lyophilizers'] },
+                { id: 'plc', title: 'PLC & Computer', icon: 'cpu', image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800", desc: 'Validation of automated control systems.', items: ['PLC Validation', 'SCADA / DAS Systems', 'BMS Validation', 'Environment Control Systems'] },
+                { id: 'steam', title: 'Steam Quality', icon: 'cloud-fog', image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=800", desc: 'Purity testing for critical utilities.', items: ['Non-condensable Gases', 'Super-heated Steam', 'Dryness Value', 'Dew Point & Oil Mist'] }
             ]
         };
 
         let currentTab = 'calibration';
         let searchTerm = '';
 
-        // --- Logic ---
+        // 4. Tab Switcher
         function switchTab(tab) {
             currentTab = tab;
             const tabCal = document.getElementById('tab-calibration');
@@ -439,7 +434,7 @@
             const searchInput = document.getElementById('service-search');
 
             if(tab === 'calibration') {
-                tabCal.className = "px-6 md:px-8 py-3 rounded-full text-sm font-bold transition-all bg-blue-600 text-white shadow-md flex items-center gap-2 transform scale-105";
+                tabCal.className = "px-6 md:px-8 py-3 rounded-full text-sm font-bold transition-all bg-slate-900 text-white shadow-md flex items-center gap-2 transform scale-105";
                 tabVal.className = "px-6 md:px-8 py-3 rounded-full text-sm font-bold transition-all text-slate-500 hover:text-slate-900 flex items-center gap-2";
                 searchInput.placeholder = "Search calibration equipment...";
             } else {
@@ -450,11 +445,13 @@
             renderServices();
         }
 
+        // 5. Search Logic
         document.getElementById('service-search').addEventListener('input', (e) => {
             searchTerm = e.target.value.toLowerCase();
             renderServices();
         });
 
+        // 6. Service Renderer
         function renderServices() {
             const grid = document.getElementById('services-grid');
             const noResults = document.getElementById('no-results');
@@ -495,7 +492,7 @@
             lucide.createIcons();
         }
 
-        // Toggle Card Logic
+        // 7. Card Toggle Interaction
         window.toggleCard = (id) => {
             const btnIcon = document.getElementById(`btn-icon-${id}`);
             const btnText = document.getElementById(`btn-text-${id}`);
@@ -509,7 +506,7 @@
             }
         }
 
-        // --- Init ---
+        // 8. General Initialization
         document.getElementById('year').textContent = new Date().getFullYear();
         
         // Mobile Menu
@@ -545,6 +542,7 @@
             document.querySelector('#contact-form button').innerText = 'Send Request';
         };
 
+        // 9. Start Rendering
         renderServices();
         renderLogos();
         setTimeout(() => lucide.createIcons(), 100);
